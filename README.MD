@@ -1,5 +1,5 @@
 # Kettle
-Kettle is a web app created using flask (and many other related modules), bootstrap, and apscheduler. The applications purpose is to schedule weekly-repeating events that activate a servo that turns on a tea kettle. While the current use of the web app is quite specific, it could be used in many other ways where a user database and an event scheduler are needed.
+Kettle is a web app created using flask (and many other related modules), SQLAlchemy, bootstrap, and apscheduler. The applications purpose is to schedule weekly-repeating events that activate a servo that turns on a tea kettle. While the current use of the web app is quite specific, it could be used in many other ways where a user database and an event scheduler are needed.
 
 ## Functionality
 
