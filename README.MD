@@ -34,7 +34,7 @@ Account Page
 
 ## Setup
 1. To setup first start by making sure you have [python 3 installed](www.python.org)
-2. Download and install the required modules used. This can be done by using pip/pip3 on the requirements.txt file. While in the Kettle directory on linux/mac you can use <br><code> pip3 -r requirements.txt</code><br> to install the modules.
+2. Download and install the required modules used. This can be done by using pip/pip3 on the requirements.txt file. While in the Kettle directory on linux/mac you can use <br><code> pip3 install -r requirements.txt</code><br> to install the modules.
 3. You need to edit the path to the site.db in the code. In routes.py on line 14 you will find<br><code>sched.add_jobstore('sqlalchemy', url='sqlite://///Users/user/Programs/site.db')
 </code><br> You must change the <code>/Users/user/Programs/site.db</code> to your path to the site.db file.
 4. That is all the setup! Now just run <code>python3 run.py</code> and enjoy!
