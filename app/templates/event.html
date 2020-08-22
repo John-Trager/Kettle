@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+{% block content %}
+    <article class="media content-section">
+        <div class="media-body">
+        <h2><a class="article-title" href="{{ url_for('event', event_id=event.id) }}">{{ event.event_days }}</a></h2>
+        <p class="article-content">Hour: {{ event.event_hour }}</p>
+        <p class="article-content">Minute: {{ event.event_min }}</p>
+        </div>
+        <div class="article-metadata">
+            <div>
+                <button class="btn btn-danger btn-sm m-1" data-toggle="modal" data-target="#deleteModal">Delete</button>
+            </div>
+        </div>
+    </article>
+    <!-- Modal -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="deleteModalLabel">Delete Event?</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <form action="{{ url_for('delete_event', event_id=event.id) }}" method="POST">
+                <input class="btn btn-danger" type="submit" value="Delete">
+            </form>
+            </div>
+        </div>
+        </div>
+    </div>
+{% endblock content%}

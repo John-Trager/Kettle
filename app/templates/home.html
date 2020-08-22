@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block content %}
+    {% if events == [] %}
+        <article class="media content-section">
+            <div class="media-body">
+            <h3>No Event(s) Added</h3>
+            <p class="article-content">To add an event login and go to States to schedule a weekly event.</p>
+            </div>
+        </article>
+    {% else %}
+        {% for event in events %}
+            <article class="media content-section">
+                <div class="media-body">
+                <h2><a class="article-title" href="{{ url_for('event', event_id=event.id) }}">{{ event.event_days }}</a></h2>
+                <p class="article-content">Hour: {{ event.event_hour }}</p>
+                <p class="article-content">Minute: {{ event.event_min }}</p>
+                </div>
+            </article>
+        {% endfor %}
+    {% endif %}
+{% endblock content%}

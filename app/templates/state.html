@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="content-section">
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">State</legend>
+                <div class="form-check">
+                    {{ form.mon(class="form-check-input") }}
+                    {{ form.mon.label(class="form-check-label") }}
+                </div>
+                <div class="form-check">
+                    {{ form.tue(class="form-check-input") }}
+                    {{ form.tue.label(class="form-check-label") }}
+                </div>
+                <div class="form-check">
+                    {{ form.wed(class="form-check-input") }}
+                    {{ form.wed.label(class="form-check-label") }}
+                </div>
+                <div class="form-check">
+                    {{ form.thu(class="form-check-input") }}
+                    {{ form.thu.label(class="form-check-label") }}
+                </div>
+                <div class="form-check">
+                    {{ form.fri(class="form-check-input") }}
+                    {{ form.fri.label(class="form-check-label") }}
+                </div>
+                <div class="form-check">
+                    {{ form.sat(class="form-check-input") }}
+                    {{ form.sat.label(class="form-check-label") }}
+                </div>
+                <div class="form-check">
+                    {{ form.sun(class="form-check-input") }}
+                    {{ form.sun.label(class="form-check-label") }}
+                </div>
+                <div class="form-group">
+                    {{ form.hour.label(class="form-control-label") }}
+                    
+                    {% if form.hour.errors %}
+                        {{ form.hour(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.hour.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.hour(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.minute.label(class="form-control-label") }}
+                    {% if form.minute.errors %}
+                        {{ form.minute(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.minute.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.minute(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+            </fieldset>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-outline-info")  }}
+            </div>
+        </form>
+    </div>
+    {% for event in events %}
+        <article class="media content-section">
+            <div class="media-body">
+            <h2><a class="article-title" href="{{ url_for('event', event_id=event.id) }}">{{ event.event_days }}</a></h2>
+            <p class="article-content">Hour: {{ event.event_hour }}</p>
+            <p class="article-content">Minute: {{ event.event_min }}</p>
+            </div>
+        </article>
+    {% endfor %}
+{% endblock content%}
