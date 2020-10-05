@@ -22,7 +22,7 @@ Register Page
 ![Register Page](media/register.png)
 
 Login Page
-![Login Page](media/register.png)
+![Login Page](media/login.png)
 
 Account Page
 ![Account Page](media/account.png)
