@@ -1,9 +1,9 @@
 # Kettle
-Kettle is a web app created using flask (and many other related modules), SQLAlchemy, bootstrap, and apscheduler. The applications purpose is to schedule weekly-repeating events that activate a servo that turns on a tea kettle. While the current use of the web app is quite specific, it could be used in many other ways where a user database and an event scheduler are needed.
+Kettle is a web app created using flask, SQLAlchemy, bootstrap, and apscheduler. The applications purpose is to schedule weekly-repeating events that activate a servo that turns on a tea kettle. While the current use of the web app is quite specific, it could be used in many other ways where a user database and an event scheduler are needed.
 
 ## Functionality
 
-The web app uses sqlite Data Base with SQLAlchemy handling it (The db could be switched to PostgreSQL for production). The db holds the apscheduler events, the events but in a different location for displaying them, and the Users. The apscheduler event currently uses a Cron like style for their scheduling. When the event hits its activation date-time it calls a function, and in my case it is the <code>runKettle()</code> method which turns on the servo that flips the kettle switch. This method could be replaced with whatever you have in mind that you would like to run. More info about [APscheduler](https://apscheduler.readthedocs.io/en/stable/)
+The web app uses sqlite Data Base with SQLAlchemy handling it (The db could be switched to PostgreSQL for production). The db holds the apscheduler events, the events but in a different location for displaying them, and the Users. The apscheduler event currently uses a Cron like style for their scheduling. When the event hits its activation date-time it calls a function, and in my case it is the <code>runKettle()</code> method which turns on the servo that flips the kettle switch. This method could be replaced with whatever you have in mind that you would like to run. More info about [APscheduler](https://apscheduler.readthedocs.io/en/stable/).
 
 The main functions the webapp features in the most recent version:
 - scheduling weekly-repeating events
